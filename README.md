@@ -15,7 +15,7 @@ Blaze is a cutting-edge project designed to streamline the management of UI scre
 3. **Explore the Possibilities:** Dive into the features and start leveraging Blaze for efficient entity-centric UI development.
 
 ## Contribute
-We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests on our [GitHub repository](https://github.com/yourusername/blaze).
+We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests on our [GitHub repository](https://github.com/atakan-acar/blaze).
 
 ## License
 Blaze is released under the [MIT License](LICENSE).
@@ -38,7 +38,7 @@ Blaze, UI ekranlarını entityler için yönetmeyi kolaylaştırmak amacıyla ta
 3. **Olanakları Keşfedin:** Özelliklere dalın ve Blaze'i etkili entity odaklı UI geliştirmek için kullanmaya başlayın.
 
 ## Katkıda Bulunun
-Topluluktan gelen katkılara açığız! [GitHub depomuzda](https://github.com/yourusername/blaze) sorunlar, özellik talepleri veya pull request'ler göndermekten çekinmeyin.
+Topluluktan gelen katkılara açığız! [GitHub depomuzda](https://github.com/atakan-acar/blaze) sorunlar, özellik talepleri veya pull request'ler göndermekten çekinmeyin.
 
 ## Lisans
 Blaze, [MIT Lisansı](LICENSE) altında lisanslanmıştır.
