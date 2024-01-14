@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaze.Api", "Blaze.Api\Blaze.Api.csproj", "{121D1ABD-EFE3-4C49-87EA-91D6538E5647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blaze.Application", "Blaze.Application\Blaze.Application.csproj", "{5889F4AC-5763-4904-B32E-D162D813FA49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{298A0928-837C-467F-8207-93210AAD6923}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{121D1ABD-EFE3-4C49-87EA-91D6538E5647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121D1ABD-EFE3-4C49-87EA-91D6538E5647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121D1ABD-EFE3-4C49-87EA-91D6538E5647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121D1ABD-EFE3-4C49-87EA-91D6538E5647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5889F4AC-5763-4904-B32E-D162D813FA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5889F4AC-5763-4904-B32E-D162D813FA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5889F4AC-5763-4904-B32E-D162D813FA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5889F4AC-5763-4904-B32E-D162D813FA49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5889F4AC-5763-4904-B32E-D162D813FA49} = {298A0928-837C-467F-8207-93210AAD6923}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7DE7132-7226-4049-951C-21083F09CE13}
+	EndGlobalSection
+EndGlobal
