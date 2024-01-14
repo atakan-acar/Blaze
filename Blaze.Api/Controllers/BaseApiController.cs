@@ -6,12 +6,20 @@ namespace Blaze.Api.Controllers
 {
     public class BaseApiController : ControllerBase
     {
-        [HttpGet("widget/{entity}")]
-        public virtual IActionResult Widget(string entity)
+        [HttpGet("e-widget/{entity}")]
+        public virtual IActionResult WidgetRender(string entity)
         {
             var widget = UIDrawer.Widget(entity);
 
-            return Ok(widget);
+            return Blaze.Api.Response.ApiContext.Response(widget);
+        }
+
+        [HttpGet("e-form/{entity}")]
+        public virtual IActionResult Form(string entity)
+        {
+            var widget = UIDrawer.Form(entity);
+
+            return Blaze.Api.Response.ApiContext.Response(widget);
         }
     }
 }

@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 
 namespace Blaze.Application.Common
 {
-    public static class UIDrawer 
-    { 
+    public static class UIDrawer
+    {
         public static WidgetResponseModel Widget(string typeName)
         {
             var widget = new WidgetResponseModel();
-            var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x=> x.GetTypes()).Where(a => a.FullName.StartsWith("Blaze.Application.Entities.Projects") && a.IsAssignableTo(typeof(Entity))).ToList();
 
-            var type = types.FirstOrDefault(x => x.Name.ToLower() == typeName.ToLower());
+            var type = GetBlazeType(typeName) ;
 
-            if (type is null) return widget;
+            if (type is null) return new WidgetResponseModel();
 
-            var properties = type.GetProperties(); 
+            var properties = type.GetProperties();
 
             foreach (var prop in properties)
             {
@@ -39,10 +38,52 @@ namespace Blaze.Application.Common
                     ColumnName = prop.Name
                 };
 
-                widget.Table.Columns.Add(column); 
-            } 
-
+                widget.Table.Columns.Add(column);
+            }
+            widget.IsSuccess = true;
             return widget;
+        }
+
+        public static FormResponseModel Form(string typeName)
+        {
+            var form = new FormResponseModel();
+            var type = GetBlazeType(typeName);
+
+            if (type is null) return new FormResponseModel();
+
+            var properties = type.GetProperties();
+
+            foreach (var prop in properties)
+            {
+                var attr = prop.GetCustomAttributes(typeof(UIAttribute), false).FirstOrDefault();
+
+                if (attr is null) continue;
+
+                UIAttribute uiAttr = attr as UIAttribute;
+
+                if (attr is null) continue;
+
+                FormElement fElement = new FormElement
+                {
+                    ElementName = uiAttr.DisplayName,
+                    Order = uiAttr.Order,
+                    UIType = uiAttr.UIType
+                };
+
+                form.Form.FormElement.Add(fElement);
+            }
+            form.IsSuccess = true;
+            return form; 
+        }
+
+
+        private static Type? GetBlazeType(string typeName)
+        {
+            var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).Where(a => a.FullName.StartsWith("Blaze.Application.Entities.Projects") && a.IsAssignableTo(typeof(Entity))).ToList();
+
+            var type = types.FirstOrDefault(x => x.Name.ToLower() == typeName.ToLower());
+
+            return type;
         }
     }
 }

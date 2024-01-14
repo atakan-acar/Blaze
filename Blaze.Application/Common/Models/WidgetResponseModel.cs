@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blaze.Application.Common.Models
 {
-    public class WidgetResponseModel
+    public class WidgetResponseModel : BaseResponse
     {
         public new Table Table { get; set; }
 
