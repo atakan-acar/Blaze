@@ -38,6 +38,14 @@ namespace Blaze.Application.Common.Models
 
         public UIType UIType { get; set; }
 
+    }
 
+    public class EntityInformationModel : BaseResponse
+    {
+        public string EntityName { get; set; }
+
+        public string Description { get; set; }
+
+        public string DisplayName { get; set; }
     }
 }

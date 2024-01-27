@@ -15,7 +15,7 @@ namespace Blaze.Application.Common
         {
             var widget = new WidgetResponseModel();
 
-            var type = GetBlazeType(typeName) ;
+            var type = GetBlazeType(typeName);
 
             if (type is null) return new WidgetResponseModel();
 
@@ -73,9 +73,27 @@ namespace Blaze.Application.Common
                 form.Form.FormElement.Add(fElement);
             }
             form.IsSuccess = true;
-            return form; 
+            return form;
         }
 
+        public static EntityInformationModel Information(string typeName)
+        {
+            var t = GetBlazeType(typeName);
+
+            if (t is null) return new EntityInformationModel();
+
+            var attr = t.GetCustomAttributes(typeof(EInformation), false).FirstOrDefault() as EInformation;
+
+            if (attr is null) return new EntityInformationModel() { IsSuccess = false, Message = "ENTITY_ATTRIBUTE_NOT_FOUND" };
+
+            return new EntityInformationModel()
+            {
+                Description = attr.Description,
+                DisplayName = attr.Name,
+                EntityName = typeName,
+                IsSuccess = true, 
+            };   
+        }
 
         private static Type? GetBlazeType(string typeName)
         {

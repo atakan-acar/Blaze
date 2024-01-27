@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blaze.Application.Entities.Projects
 {
+    [EInformation(Name = "Ürünler", Description = "Ürünleri içeren varlık bilgisidir.")]
     public class Product : Entity
     {
 
